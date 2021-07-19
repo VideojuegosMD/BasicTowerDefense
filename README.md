@@ -1,2 +1,2 @@
 # BasicTowerDefense
-Tower defense básico, junto con 2 escenas de interacciones simples.
+Tower defense básico + 2 escenas de interacciones simples.
