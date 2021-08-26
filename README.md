@@ -9,5 +9,6 @@ Planificación de actualizaciones:
 - Distintos niveles, posibilidad de generación procedural
 - Sistema automático de oleadas.
 - Poderes por otro tipo de moneda de pago.
+- Atajos de teclado.
 
 
