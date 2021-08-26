@@ -8,6 +8,6 @@ Planificación de actualizaciones:
 - Sistema de mejoras
 - Distintos niveles, posibilidad de generación procedural
 - Sistema automático de oleadas.
-
+- Poderes por otro tipo de moneda de pago.
 
 
