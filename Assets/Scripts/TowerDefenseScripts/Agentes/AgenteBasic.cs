@@ -12,6 +12,8 @@ public class AgenteBasic : MonoBehaviour
     public bool finRecorrido;
     public int dmg, hpPoints; //Daño y vida
     public bool dead;
+    int puntosBase = 2;
+    public virtual int puntos { get { return puntosBase * Mathf.Clamp(GameManager.main.GetNumRonda(), 1, 15); } }
 
     private void Awake()
     {
@@ -52,6 +54,9 @@ public class AgenteBasic : MonoBehaviour
         {           
             hpPoints = 0;
             dead = true;
+           
+            GameManager.main.SumConstructPoints(puntos);
+            GameManager.main.ActualizarTextoConst();
             GameManager.main.CheckEnemyAlive(this); //Control de enemigos destruidos.       
         }
     }

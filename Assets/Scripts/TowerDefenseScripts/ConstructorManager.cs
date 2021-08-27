@@ -68,7 +68,7 @@ public class ConstructorManager : MonoBehaviour
 
             if (results.Count > 0) //Si hay resultados hay interfaz de por medio.
             {
-                Debug.Log("Over UI");
+               // Debug.Log("Over UI");
                 if (matChecker.GetColor("_Color") != Color.red)
                 {
                     matChecker.SetColor("_Color", Color.red);

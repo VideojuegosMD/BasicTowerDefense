@@ -46,6 +46,10 @@ public class GameManager : MonoBehaviour
         tEnemLeft.text = "Enemigos restantes: " + roundM.enemleft;
         tConstP.text = "Puntos de construcción: " + constM.constructPoints;
     }
+    public void ActualizarTextoConst()
+    {
+        tConstP.text = "Puntos de construcción: " + constM.constructPoints;
+    }
    
     private void Awake()
     {
@@ -77,10 +81,18 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Ganaste.");
             roundM.NextRound();
-            constM.constructPoints += 10 + roundM.round * 10;
+            //constM.constructPoints += 10 + roundM.round * 10; //Puntos final de ronda
             ActualizarTextos();
             Round(true);
         }
+    }
+    public void SumConstructPoints(int x)
+    {
+        constM.constructPoints += x;
+    }
+    public int GetNumRonda()
+    {
+        return roundM.round;
     }
 
     public void BComenzar()
