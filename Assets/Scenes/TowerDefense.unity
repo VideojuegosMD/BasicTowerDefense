@@ -834,17 +834,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 464139217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad36c6868509144fa1806d6b71a5e2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 72f4be0ed3e7b054da1e0a102fee7e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lr: {fileID: 0}
-  enemyPrefab: {fileID: 2452117838054679719, guid: 866717bf8633ba3438bc815a39c5c5c2,
-    type: 3}
+  enemyPrefab:
+  - {fileID: 2452117838054679719, guid: 2c38c524dad799645a50cfb4e8e8c7a8, type: 3}
+  - {fileID: 2452117838054679719, guid: 5fa12cc85b6e3db4681544fd285b7b3f, type: 3}
+  - {fileID: 2452117838054679719, guid: 6077280418fb81c49a5781430dcf4dd1, type: 3}
+  - {fileID: 2452117838054679719, guid: 5c14d242b6e9a2f478eebc4b648265bb, type: 3}
+  - {fileID: 2452117838054679719, guid: 1556a4269266f2c4cad3a54af951a374, type: 3}
+  - {fileID: 2452117838054679719, guid: 370cf8f08cd36dd48bff7b98d3770d6f, type: 3}
   enemyList: []
   indexCount: 0
   enemleft: 0
   round: 0
-  spawnTime: 1
+  spawnTime: 0
 --- !u!1 &602011001
 GameObject:
   m_ObjectHideFlags: 0

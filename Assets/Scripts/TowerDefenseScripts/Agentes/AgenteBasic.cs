@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/*
+ Script editado por Pablo Salas.
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,15 +13,16 @@ public class AgenteBasic : MonoBehaviour
     [SerializeField]
     internal int nPaso; //Posición de linea.
     public bool finRecorrido;
-    public int dmg, hpPoints; //Daño y vida
+    public int dmg, hpPoints,baseHp; //Daño y vida, vida base
     public bool dead;
-    int puntosBase = 2;
+    public int puntosBase = 2;
+    bool healing = false;
     public virtual int puntos { get { return puntosBase * Mathf.Clamp(GameManager.main.GetNumRonda(), 1, 15); } }
 
     private void Awake()
     {
         dead = false;
-        hpPoints = 10;
+        hpPoints = baseHp;
         dmg = 10;
         agent = GetComponent<NavMeshAgent>();
   
@@ -47,7 +51,7 @@ public class AgenteBasic : MonoBehaviour
         
     }
 
-    public void SumRestHP(int valor) 
+    public virtual void SumRestHP(int valor) 
     {
         hpPoints += valor;
         if (hpPoints <= 0)
@@ -61,7 +65,7 @@ public class AgenteBasic : MonoBehaviour
         }
     }
 
-    private void Move()
+    public virtual void Move()
     {        
         //Vector para la posición a seguir, cuidado con la posición de la linea, componer vector de la suma de las posiciones y la posicion global.
         Vector3 nextPos = new Vector3(line.GetPosition(nPaso).x + line.transform.position.x, 0, line.GetPosition(nPaso).z + line.transform.position.z);
@@ -75,5 +79,46 @@ public class AgenteBasic : MonoBehaviour
             else { nPaso++; }        //Siguiente paso.
         }             
         agent.SetDestination(nextPos); //Movemos al agente.
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("CharcoVerde"))
+        {
+            agent.speed += 1;
+        }
+
+        if (other.CompareTag("CharcoRojo"))
+        {
+            hpPoints += 5;            
+        }
+        if (other.CompareTag("Healer"))
+        {
+            healing = true;
+            StartCoroutine(Healing());
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Healer"))
+        {
+           healing=true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Healer"))
+        {
+            healing = false;
+        }
+    }
+    IEnumerator Healing()
+    {
+        while(healing)
+        {
+            yield return new WaitForSeconds(1f);
+            hpPoints += 1;
+        }
+        yield return null;
     }
 }

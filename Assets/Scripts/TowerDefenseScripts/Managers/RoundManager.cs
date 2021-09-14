@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿/*
+ Script editado por Pablo Salas.
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
     public LineRenderer lr; //Linea a seguir por los enemigos, podría haber varios recorridos según los enemigos.
-    public GameObject enemyPrefab; //Enemigo a instanciar.
+    public GameObject[] enemyPrefab; //Matriz de tipos de enemigo a instanciar. ---- CAMBIO Por Pablo Salas------
     public List<AgenteBasic> enemyList; //Lista de enemigos.
     public int indexCount, enemleft, round; //control de indexado, enemigos restantes y ronda.
 
@@ -64,7 +67,7 @@ public class RoundManager : MonoBehaviour
             enemyList[indexCount].gameObject.SetActive(true); //Activamos el objeto de la lista en base a indexCount.
             timer = Time.timeSinceLevelLoad + spawnTime; //Control del contador para la siguiente instancia.          
             enemyList[indexCount].dead = false; //El enemigo no está muerto.
-            enemyList[indexCount].hpPoints = 10 + 2 * round; //Vida del enemigo en base a la ronda.
+            enemyList[indexCount].hpPoints = enemyList[indexCount].baseHp + 2 * round; //Vida del enemigo en base a la ronda.
             enemyList[indexCount].dmg = 10 + 2 * round;//Vida del enemigo en base a la ronda.
             enemyList[indexCount].ResetPos(); //Establecemos posición.            
             indexCount++; //Siguiente enemigo.
@@ -72,9 +75,12 @@ public class RoundManager : MonoBehaviour
     }
     void _ForCrearEnemigos(int objetivo) //Bucle for para crear enemigos en base al parametro de la función.
     {
+        int index = 0;
         for (int i = 0; i < objetivo; i++)
-        {
-            AgenteBasic g = Instantiate(enemyPrefab, lr.GetPosition(0), Quaternion.identity, transform).GetComponent<AgenteBasic>();
+        {   //---- CAMBIO por Pablo Salas----- 
+            index = Random.Range(0, enemyPrefab.Length); //Saca un indice aleatorio, para instaciar un prefab de enemigo aleatorio de los que hay en la matriz.
+            AgenteBasic g = Instantiate(enemyPrefab[index], lr.GetPosition(0), Quaternion.identity, transform).GetComponent<AgenteBasic>();
+            //-------------------
             enemyList.Add(g); //Lo añadimos a la lista.        
             g.line = lr; //Le damos la linea a seguir.
             g.gameObject.SetActive(false); //Desactivamos enemigo.
