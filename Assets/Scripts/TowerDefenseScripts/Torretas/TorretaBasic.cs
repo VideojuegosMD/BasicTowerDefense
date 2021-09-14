@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TorretaBasic : MonoBehaviour
-{
+{    
+    public Sprite icon;
     public GameObject balaPrefab; //Proyectil a disparar.
     public Transform canon,spawnPoint; //Estructura de torre.
     public List<Collider> enemies; //Lista de enemigos
@@ -26,6 +27,9 @@ public class TorretaBasic : MonoBehaviour
 
             Vector3 dir = enemies[0].transform.position - canon.position; //Apuntamos al enemigo desde el cañon
 
+            //Debug.Log("Tamaño de vector: " + dir.magnitude);
+            dir = dir.normalized;
+            Debug.Log("Tamaño de vector: " + dir.magnitude);
             canon.forward = dir; //Apuntamos el cañon.
             
 
@@ -35,7 +39,7 @@ public class TorretaBasic : MonoBehaviour
                 GameObject shotInstance = InstanceManager.main.GetItem(); //Disparo de bala por ObjectPooling.
                 shotInstance.SetActive(true);
                 shotInstance.transform.position = spawnPoint.position;
-                shotInstance.GetComponent<Rigidbody>().AddForce(bulletSpeed * dir.normalized,ForceMode.Impulse);
+                shotInstance.GetComponent<Rigidbody>().AddForce(bulletSpeed * dir,ForceMode.Impulse);
               
             }
 
