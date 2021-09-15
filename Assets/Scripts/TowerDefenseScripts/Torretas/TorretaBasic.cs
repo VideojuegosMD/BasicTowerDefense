@@ -10,10 +10,22 @@ public class TorretaBasic : MonoBehaviour
     public List<Collider> enemies; //Lista de enemigos
     public float fireRate, bulletSpeed; //Velocidad de disparo y bala.
     float timer; //Contador.
-    public int cost, dmg; // Coste de torreta y daño por bala.
+    public int cost, dmg, nivel; // Coste de torreta y daño por bala.
     public bool chorrazo; //Efecto curioso.
-    bool oneShot; //Control de un solo disparo en Update.
+    bool oneShot; //Control de un solo disparo en Update.  
+    public float rango;
+    SphereCollider colRango;
 
+    public void Start()
+    {
+        colRango = GetComponent<SphereCollider>();
+    }
+
+    public void SetRango(float r)
+    {
+        rango = r;
+        colRango.radius = r;
+    }
 
     private void Update()
     {

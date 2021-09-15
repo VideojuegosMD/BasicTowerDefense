@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb87ca7a27427ce4393d6c7f82ea46f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: f0c262cceb5323d4c916875fd76450d3, type: 3}
   balaPrefab: {fileID: 1676176800746620671, guid: 1ee650468cffd1c40b7b6d26e4936339,
     type: 3}
   canon: {fileID: 8664520579296975958}
