@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TorretaBasic : MonoBehaviour
-{    
+{
+    public string name;
     public Sprite icon;
     public GameObject balaPrefab; //Proyectil a disparar.
     public Transform canon,spawnPoint; //Estructura de torre.
@@ -19,6 +20,7 @@ public class TorretaBasic : MonoBehaviour
     public void Start()
     {
         colRango = GetComponent<SphereCollider>();
+        name = "Torreta básica";
     }
 
     public void SetRango(float r)

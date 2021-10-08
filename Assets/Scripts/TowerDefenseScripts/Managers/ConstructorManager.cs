@@ -25,7 +25,18 @@ public class ConstructorManager : MonoBehaviour
     EventSystem m_EventSystem; 
     GraphicRaycaster m_Raycaster;
     
-
+    public bool OperarConstructPoints(int i)
+    {
+        if(constructPoints + i <0)
+        {
+            return false;
+        }
+        else
+        {
+            constructPoints += i;
+            return true;
+        }       
+    }
     // Start is called before the first frame update
     void Start()
     {
