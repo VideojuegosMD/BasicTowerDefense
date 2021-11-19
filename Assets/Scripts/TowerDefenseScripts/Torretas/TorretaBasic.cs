@@ -11,10 +11,14 @@ public class TorretaBasic : MonoBehaviour
     public List<Collider> enemies; //Lista de enemigos
     public float fireRate, bulletSpeed; //Velocidad de disparo y bala.
     float timer; //Contador.
-    public int cost, dmg, nivel; // Coste de torreta y daño por bala.
+    public int costeBase;
+    int _cost;
+    public int cost { get { return _cost + costeBase; } set { _cost = value; } }
+    public int dmg, nivel; // Coste de torreta y daño por bala.
+    public int incremento; //incremento de mejora
     public bool chorrazo; //Efecto curioso.
     bool oneShot; //Control de un solo disparo en Update.  
-    public float rango;
+    public float rango,rangoBase=20;
     SphereCollider colRango;
 
     public void Start()
