@@ -37,6 +37,12 @@ public class ConstructorManager : MonoBehaviour
             return true;
         }       
     }
+
+    public void OperateConstructPoints(int i)
+    {
+        constructPoints += i;
+        GameManager.main.tConstP.text = "Puntos de construcción: " + constructPoints;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -106,8 +112,8 @@ public class ConstructorManager : MonoBehaviour
                                 if ((constructPoints - selectedTower.GetComponent<TorretaBasic>().cost >= 0)) //Si tenemos puntos de construcción
                                 {
                                     mT.AddTorreta(Instantiate(selectedTower, rHit.point, Quaternion.identity).GetComponent<TorretaBasic>()); //Instanciamos torreta.
-                                    constructPoints -= selectedTower.GetComponent<TorretaBasic>().cost; //Quitamos los puntos usados.
-                                    GameManager.main.tConstP.text = "Puntos de construcción: " + constructPoints; //Actualizamos texto.
+                                   
+                                    OperateConstructPoints(-selectedTower.GetComponent<TorretaBasic>().cost);
                                 }
                                 else
                                 {

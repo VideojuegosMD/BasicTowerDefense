@@ -36,19 +36,37 @@ public class MejoraTorreta : MonoBehaviour
     }
     #region FuncionesParaBotones
     public void ConfirmarCambios()
+    {  
+        if (costeMejora > constructorManager.constructPoints)
+        {
+            Debug.Log("No puedes aplicar la mejora, faltan puntos.");
+            return;
+        }
+
+        PopUp.main.ActiDeactPopUp();
+
+        PopUp.main.ChangeQuestion("¿Estás seguro de que quieres aplicar la mejora?");
+
+        PopUp.main.ChangeButtonText("Sí", "No");
+
+        PopUp.main.ChangeButtonAction(true, delegate { PopUp.main.ActiDeactPopUp();PopUp.main.RemoveActions(); AplicarCambios(); });
+        PopUp.main.ChangeButtonAction(false, delegate { PopUp.main.ActiDeactPopUp(); PopUp.main.RemoveActions(); });
+    }
+
+    public void AplicarCambios()
     {
+        constructorManager.OperateConstructPoints(-costeMejora);
         torretaSelec.dmg = (int)iDmg;
-        torretaSelec.nivel = (int)iLvl ;
-        torretaSelec.fireRate= fCadencia;
+        torretaSelec.nivel = (int)iLvl;
+        torretaSelec.fireRate = fCadencia;
         torretaSelec.bulletSpeed = fVel;
         torretaSelec.rango = fRango;
         torretaSelec.GetComponent<SphereCollider>().radius = fRango + torretaSelec.rangoBase;
         torretaSelec.cost = costeMejora;
         torretaSelec.incremento = incremento;
-
         tNivel.text = "Nivel de torreta:" + "\n" + torretaSelec.nivel.ToString();
         tValor.text = "Valor de torreta:" + "\n" + torretaSelec.cost.ToString();
-        tCoste.text = "Coste de cambios:" + "\n" + CalcCoste(torretaSelec);
+        tCoste.text = "Coste de cambios:" + "\n" + 0;
         ResetValues();
     }
     public void ResetValues()
@@ -168,13 +186,6 @@ public class MejoraTorreta : MonoBehaviour
     #endregion
 
 
-    public int CalcCoste(TorretaBasic t)
-    {
-        int coste = 0;
-
-        return coste;
-    }
-
     public void UpdateContent()
     {
         //Actualización de variables con la torreta seleccionada
@@ -193,7 +204,7 @@ public class MejoraTorreta : MonoBehaviour
         tRango.text = torretaSelec.rango.ToString();
         tNivel.text = "Nivel de torreta:" + "\n" + torretaSelec.nivel.ToString();
         tValor.text = "Valor de torreta:" + "\n" + torretaSelec.cost.ToString();
-        tCoste.text = "Coste de cambios:" + "\n" + CalcCoste(torretaSelec);
+        tCoste.text = "Coste de cambios:" + "\n" + 0;
         img.sprite = torretaSelec.icon;
     }
 }
