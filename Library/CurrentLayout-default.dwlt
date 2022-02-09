@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 342}
   m_MaxSize: {x: 16006, y: 8042}
   vertical: 0
-  controlID: 16962
+  controlID: 86
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 342}
   m_MaxSize: {x: 12005, y: 8042}
   vertical: 1
-  controlID: 16963
+  controlID: 87
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 16964
+  controlID: 88
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -361,7 +361,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -374,18 +374,18 @@ MonoBehaviour:
       y: 21
       width: 1056
       height: 523
-    m_Scale: {x: 0.48425925, y: 0.48425925}
-    m_Translation: {x: 528, y: 261.5}
+    m_Scale: {x: 0.5006821, y: 0.5006821}
+    m_Translation: {x: 528, y: 252.63165}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1090.3251
-      y: -540
-      width: 2180.6501
-      height: 1080
+      x: -1054.5613
+      y: -504.57495
+      width: 2109.1226
+      height: 1044.575
     m_MinimalGUI: 1
   m_defaultScale: 0.48425925
   m_LastWindowPixelSize: {x: 1056, y: 544}
@@ -425,21 +425,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c07bffff1c82ffff3497ffff82b3ffffb6b6fffff2fafffffafaffff0afbffff42fbffff64fbffff90340000a6340000d43400001c350000
+      m_ExpandedIDs: 8482ffff8ceaffffd8faffff10fbffff14fbffff5cfbffff68fbffff8434000092340000a0340000b0340000d83400002e350000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: ButtonHolder
+        m_OriginalName: ButtonHolder
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 13488
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -485,7 +485,7 @@ MonoBehaviour:
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: -18762
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
 --- !u!114 &16
 MonoBehaviour:
@@ -523,9 +523,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 935.7883, y: 674.59064, z: 26.655151}
+    m_Target: {x: -17.987991, y: 0, z: -4.0288544}
     speed: 2
-    m_Value: {x: 935.7883, y: 674.59064, z: 26.655151}
+    m_Value: {x: -17.987991, y: 0, z: -4.0288544}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -571,13 +571,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0077980505, y: -0.054873634, z: 0.00042866066, w: -0.9984635}
+    m_Target: {x: -0.21601675, y: -0.025776045, z: 0.0057049016, w: -0.9760337}
     speed: 2
-    m_Value: {x: -0.007798045, y: -0.054873593, z: 0.00042866034, w: -0.9984628}
+    m_Value: {x: -0.21601655, y: -0.025776021, z: 0.005704896, w: -0.97603273}
   m_Size:
-    m_Target: 341.97687
+    m_Target: 15.800929
     speed: 2
-    m_Value: 341.97687
+    m_Value: 15.800929
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -667,20 +667,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/TowerDefenseScripts/HUD
+    - Assets/Prefabs/TowerDefense/Torretas
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets/Scripts/TowerDefenseScripts/HUD
+  - Assets/Prefabs/TowerDefense/Torretas
   m_LastFoldersGridSize: 60
   m_LastProjectPath: C:\Users\mario.sancho\Downloads\BasicTowerDefense-main\BasicTowerDefense
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 63}
-    m_SelectedIDs: 90380000
-    m_LastClickedID: 14480
-    m_ExpandedIDs: 000000005c3800005e38000060380000623800006438000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 04390000
+    m_LastClickedID: 14596
+    m_ExpandedIDs: 00000000b0380000b2380000b4380000b6380000b8380000d4380000da38000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -708,7 +708,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005c3800005e38000060380000623800006438000000ca9a3b
+    m_ExpandedIDs: 00000000b0380000b2380000b4380000b6380000b8380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -733,9 +733,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b6b6ffff
-    m_LastClickedInstanceID: -18762
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: e6faffff
+    m_LastClickedInstanceID: -1306
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

@@ -35,6 +35,29 @@ public class MejoraTorreta : MonoBehaviour
        // Debug.Log(costeMejora);
     }
     #region FuncionesParaBotones
+    public void VenderTorreta()
+    {
+        //Consultar el precio de la torreta,
+        //Mandar el precio a el manager de puntos.
+        //eliminar la torreta.
+        //Borrar icono
+        //cerrar panel de mejora.
+        constructorManager.OperateConstructPoints(torretaSelec.cost);
+        constructorManager.mT.DestroyTorreta(torretaSelec);
+        this.gameObject.SetActive(false);
+    }
+    public void ConfirmarVenta()
+    {
+        PopUp.main.ActiDeactPopUp();
+
+        PopUp.main.ChangeQuestion("¿Estás seguro de que quieres vender la torreta?");
+
+        PopUp.main.ChangeButtonText("Sí", "No");
+
+        PopUp.main.ChangeButtonAction(true, delegate { PopUp.main.ActiDeactPopUp(); PopUp.main.RemoveActions(); VenderTorreta(); });
+        PopUp.main.ChangeButtonAction(false, delegate { PopUp.main.ActiDeactPopUp(); PopUp.main.RemoveActions(); });
+    }
+
     public void ConfirmarCambios()
     {  
         if (costeMejora > constructorManager.constructPoints)
@@ -52,7 +75,6 @@ public class MejoraTorreta : MonoBehaviour
         PopUp.main.ChangeButtonAction(true, delegate { PopUp.main.ActiDeactPopUp();PopUp.main.RemoveActions(); AplicarCambios(); });
         PopUp.main.ChangeButtonAction(false, delegate { PopUp.main.ActiDeactPopUp(); PopUp.main.RemoveActions(); });
     }
-
     public void AplicarCambios()
     {
         constructorManager.OperateConstructPoints(-costeMejora);

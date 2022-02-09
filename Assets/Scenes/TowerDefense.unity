@@ -2459,6 +2459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listaTorretas: []
+  listaBotones: []
   prefabBoton: {fileID: 7845682018618365622, guid: 2f68afe9c07d2e047bd340b1502ef36f,
     type: 3}
   buttonHolder: {fileID: 1059603495}
@@ -2641,7 +2642,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2099
   constructMode: 0
-  constructPoints: 20
+  constructPoints: 5000
 --- !u!1001 &637066320453437711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2951,6 +2952,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711798757163220275, guid: 6d4166e779f028e4f9a9f861191de6ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711798757163220275, guid: 6d4166e779f028e4f9a9f861191de6ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711798757163220275, guid: 6d4166e779f028e4f9a9f861191de6ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1149255775}
+    - target: {fileID: 3711798757163220275, guid: 6d4166e779f028e4f9a9f861191de6ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711798757163220275, guid: 6d4166e779f028e4f9a9f861191de6ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConfirmarVenta
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711798757163220275, guid: 6d4166e779f028e4f9a9f861191de6ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3946241563486979799, guid: 6d4166e779f028e4f9a9f861191de6ef,
         type: 3}
