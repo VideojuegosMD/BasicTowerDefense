@@ -375,6 +375,7 @@ MonoBehaviour:
   incremento: 0
   chorrazo: 0
   rango: 0
+  rangoBase: 20
 --- !u!135 &8664520578816841941
 SphereCollider:
   m_ObjectHideFlags: 0
